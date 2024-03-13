@@ -44,6 +44,12 @@ jobs:
 
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push, comment issues & post new PR
+      # Remove the ones you do not need
+      contents: write
+      issues: write
+      pull-requests: write
 
     steps:
       # Git Checkout

@@ -1,20 +1,23 @@
 {
-	"folders": [
-		{
-			"path": "../.."
-		},
-		{
-			"path": "../../../../../Downloads/megalinter-reports/IDE-config"
-		}
-	],
-	"settings": {
-		"workbench.colorCustomizations": {
-			"editor.lineHighlightBackground": "#1073cf2d",
-			"editor.lineHighlightBorder": "#9fced11f",
-			"editor.findMatchBackground": "#009032",
-			"editor.findMatchBorder": "#00ff1aeb",
-			"editor.findMatchHighlightBackground": "#006100e3",
-			"editor.findMatchHighlightBorder": "#007733"
-		}
-	}
+  "folders": [
+    {
+      "name": "twg_sportsclub_mono",
+      "path": "../.."
+    },
+    {
+      "name": "IDE-config",
+      "path": "../../../../../Downloads/megalinter-reports/IDE-config"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "editor.lineHighlightBackground": "#7afbd07b",
+      "editor.lineHighlightBorder": "#9fced166",
+      "editor.findMatchBackground": "#009032",
+      "editor.findMatchBorder": "#00ff1aeb",
+      "editor.findMatchHighlightBackground": "#006100e3",
+      "editor.findMatchHighlightBorder": "#007733",
+      "editor.selectionBackground": "#3a25f9e2"
+    }
+  }
 }
