@@ -2,7 +2,6 @@
 # More info at https://megalinter.io
 ---
 name: MegaLinter
-
 # Trigger mega-linter at every push. Action will also be visible from
 # Pull Requests to main
 on:
@@ -27,11 +26,11 @@ env:
 
   # Decide which event triggers application of fixes in a commit or a PR
   # (pull_request, push, all)
-  APPLY_FIXES_EVENT: pull_request
+  APPLY_FIXES_EVENT: all
 
   # If APPLY_FIXES is used, defines if the fixes are directly committed (commit)
   # or posted in a PR (pull_request)
-  APPLY_FIXES_MODE: commit
+  APPLY_FIXES_MODE: pull_request
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -41,7 +40,10 @@ jobs:
   megalinter:
     name: MegaLinter
     runs-on: ubuntu-latest
-
+    env:
+      MEGLINTER_VERSION: a7a0163b6c8ff7474a283d99a706e27483ddd80f
+      MEGLINTER_IMAGE: oxsecurity/megalinter
+      IMAGE_TAR_PATH: megalinter_image.tar
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
     permissions:
