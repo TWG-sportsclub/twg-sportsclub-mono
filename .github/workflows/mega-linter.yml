@@ -193,3 +193,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: TWG-sportsclub/twg-sportsclub-mono
+          verbose: true
