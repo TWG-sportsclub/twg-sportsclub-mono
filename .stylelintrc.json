@@ -13,9 +13,9 @@
           "screen"
         ]
       }
-    ],
-    "ignoreFiles": ["build/**", "dist/**", "**/reset.css", "**/bootstrap*.css"],
-    "cache": true,
-    "fix": true
-  }
+    ]
+  },
+  "ignoreFiles": ["build/**", "dist/**", "**/reset.css", "**/bootstrap*.css"],
+  "cache": true,
+  "fix": true
 }
