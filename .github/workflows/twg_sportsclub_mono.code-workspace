@@ -18,6 +18,22 @@
       "editor.findMatchHighlightBackground": "#006100e3",
       "editor.findMatchHighlightBorder": "#007733",
       "editor.selectionBackground": "#3a25f9e2"
-    }
+    },
+    "ColorfulMonorepo.workspaces.collection": [
+      {
+        "path": "/Users/antonioreid/development/TWG/twg_sportsclub_mono",
+        "packageName": "twg_sportsclub_mono",
+        "label": "twg_sportsclub_mono",
+        "foreground": "#ffffff",
+        "background": "#7d18c0"
+      },
+      {
+        "path": "/Users/antonioreid/Downloads/megalinter-reports/IDE-config",
+        "packageName": "IDE-config",
+        "label": "IDE-config",
+        "foreground": "#ffffff",
+        "background": "#352b5c"
+      }
+    ]
   }
 }

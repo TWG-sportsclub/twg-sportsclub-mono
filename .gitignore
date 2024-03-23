@@ -1,1 +1,4 @@
 megalinter-reports/
+
+.nx/installation
+.nx/cache
