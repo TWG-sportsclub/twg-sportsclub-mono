@@ -26,8 +26,8 @@
     "ColorfulMonorepo.workspaces.collection": [
       {
         "path": "/Users/antonioreid/development/TWG/twg_sportsclub_mono",
-        "packageName": "twg_sportsclub_mono",
-        "label": "twg_sportsclub_mono",
+        "packageName": "sportsclub",
+        "label": "🌱  sportsclub",
         "foreground": "#ffffff",
         "background": "#7d18c0"
       },
