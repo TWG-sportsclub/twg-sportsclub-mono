@@ -193,7 +193,9 @@
     "finalizationregistry",
     "weakset",
     "weakmap",
-    ""
+    "asynckit",
+    "findlast",
+    "envify"
   ],
   "version": "0.2"
 }
