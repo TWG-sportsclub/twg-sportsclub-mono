@@ -273,7 +273,8 @@
     "listr",
     "pidtree",
     "rfdc",
-    "pseudomap"
+    "pseudomap",
+    "lintstagedrc"
   ],
   "version": "0.2"
 }
