@@ -260,7 +260,20 @@
     "yargs",
     "yarnpkg",
     "yocto",
-    "zkochan"
+    "zkochan",
+    "typecheck",
+    "filenamify",
+    "phenomnomnominal",
+    "sindresorhus",
+    "svgo",
+    "szmarczak",
+    "responselike",
+    "strtok",
+    "alpn",
+    "listr",
+    "pidtree",
+    "rfdc",
+    "pseudomap"
   ],
   "version": "0.2"
 }
