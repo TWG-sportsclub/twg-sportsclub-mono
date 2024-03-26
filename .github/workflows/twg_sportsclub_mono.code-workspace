@@ -2,12 +2,12 @@
   "folders": [
     {
       "name": "twg_sportsclub_mono",
-      "path": "../.."
+      "path": "../..",
     },
     {
       "name": "IDE-config",
-      "path": "../../../../../Downloads/megalinter-reports/IDE-config"
-    }
+      "path": "../../../../../Downloads/megalinter-reports/IDE-config",
+    },
   ],
   "settings": {
     "workbench.colorCustomizations": {
@@ -21,7 +21,7 @@
       "sideBarTitle.foreground": "#7d18c0",
       "statusBar.background": "#7d18c0",
       "statusBar.foreground": "#ffffff",
-      "tab.activeBorder": "#7d18c0"
+      "tab.activeBorder": "#7d18c0",
     },
     "ColorfulMonorepo.workspaces.collection": [
       {
@@ -29,15 +29,15 @@
         "packageName": "sportsclub",
         "label": "🌱  sportsclub",
         "foreground": "#ffffff",
-        "background": "#7d18c0"
+        "background": "#7d18c0",
       },
       {
         "path": "/Users/antonioreid/Downloads/megalinter-reports/IDE-config",
         "packageName": "IDE-config",
         "label": "IDE-config",
         "foreground": "#ffffff",
-        "background": "#352b5c"
-      }
-    ]
-  }
+        "background": "#352b5c",
+      },
+    ],
+  },
 }
