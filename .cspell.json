@@ -195,7 +195,23 @@
     "weakmap",
     "asynckit",
     "findlast",
-    "envify"
+    "envify",
+    "grype",
+    "cyclonedx",
+    "armv",
+    "cpes",
+    "distro",
+    "UNINDEXED",
+    "logrus",
+    "devskim",
+    "markdownlint",
+    "secretlintrc",
+    "amqp",
+    "amqplib",
+    "ioredis",
+    "kafkajs",
+    "mqtt",
+    "nats"
   ],
   "version": "0.2"
 }
