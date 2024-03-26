@@ -1,16 +1,9 @@
 node_modules/
-
+build
+dist
+.env
+.nx
 megalinter-reports/
-
-.nx/installation
-.nx/cache
-.nx/installation
-.nx/cache
-.nx/installation
-.nx/cache
-.nx/installation
-.nx/cache
-
 # Next.js
 .next
 out
