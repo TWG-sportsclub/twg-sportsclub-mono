@@ -1,5 +1,7 @@
+---
 # Configuration file for MegaLinter
 #
+# yamllint disable-line rule:line-length
 # See all available variables at https://megalinter.io/latest/config-file/ and in
 # linters documentation
 
