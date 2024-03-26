@@ -84,7 +84,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint YAML files
-        uses: opt-nc/yamlfixer-action@v1.3.2
+        uses: opt-nc/yamlfixer-action@48ab36469dc1267d942af9ccb6eb83c4260f0f92
 
         with:
           options: --summary
