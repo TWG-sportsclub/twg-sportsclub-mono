@@ -10,3 +10,7 @@ megalinter-reports/
 .nx/cache
 .nx/installation
 .nx/cache
+
+# Next.js
+.next
+out
