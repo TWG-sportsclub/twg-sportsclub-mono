@@ -126,6 +126,7 @@ jobs:
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           title: "[MegaLinter] Apply linters automatic fixes"
           labels: bot
+
       - name: Create PR output
         if: >-
           steps.ml.outputs.has_updated_sources == 1 &&
@@ -160,6 +161,7 @@ jobs:
           ) &&
           !contains(github.event.head_commit.message, 'skip fix')
         run: sudo chown -Rc $UID .git/
+
       - name: Commit and push applied linter fixes
         uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d
         if: >-
@@ -185,6 +187,7 @@ jobs:
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
           commit_user_email: read.musik@gmail.com
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab
         with:
