@@ -51,20 +51,25 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           set-safe-directory: "/github/workspace/.git"
 
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
           # improve performance
           fetch-depth: 0
 
+      # - name: Cache Docker images.
+      #   uses: ScribeMD/docker-cache@0.5.0
+      #   with:
+      #     key: docker-${{ runner.os }}-${{ hashFiles(github.action_path) }}
+
       # MegaLinter
       - name: MegaLinter
 
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://megalinter.io/latest/flavors/
-        uses: oxsecurity/megalinter@a7a0163b6c8ff7474a283d99a706e27483ddd80f
         id: ml
+        uses: oxsecurity/megalinter@a7a0163b6c8ff7474a283d99a706e27483ddd80f
 
         # All available variables are described in documentation
         # https://megalinter.io/latest/config-file/
@@ -81,6 +86,7 @@ jobs:
           #     github.event_name == 'push' &&
           #     github.ref == 'refs/heads/main'
           #   }}
+          DEFAULT_WORKSPACE: twg_sportsclub_mono
           VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
 
@@ -102,16 +108,14 @@ jobs:
       - name: Create Pull Request with applied fixes
         uses: peter-evans/create-pull-request@70a41aba780001da0a30141984ae2a0c95d8704e
         id: cpr
-        if: >-
-          steps.ml.outputs.has_updated_sources == 1 && (
-            env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'pull_request' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
+        if: steps.ml.outputs.has_updated_sources == 1 && ( env.APPLY_FIXES_EVENT
+          == 'all' || env.APPLY_FIXES_EVENT == github.event_name ) &&
+          env.APPLY_FIXES_MODE == 'pull_request' && ( github.event_name ==
+          'push' || github.event.pull_request.head.repo.full_name ==
+          github.repository ) && !contains(github.event.head_commit.message,
+          'skip fix')
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           title: "[MegaLinter] Apply linters automatic fixes"
           labels: bot
@@ -132,28 +136,22 @@ jobs:
       # Push new commit if applicable
       # (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
-        if: >-
-          steps.ml.outputs.has_updated_sources == 1 && (
-            env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref !=
-          'refs/heads/main' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
+        if: steps.ml.outputs.has_updated_sources == 1 && ( env.APPLY_FIXES_EVENT
+          == 'all' || env.APPLY_FIXES_EVENT == github.event_name ) &&
+          env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' &&
+          ( github.event_name == 'push' ||
+          github.event.pull_request.head.repo.full_name == github.repository )
+          && !contains(github.event.head_commit.message, 'skip fix')
         run: sudo chown -Rc $UID .git/
 
       - name: Commit and push applied linter fixes
         uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d
-        if: >-
-          steps.ml.outputs.has_updated_sources == 1 && (
-            env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref !=
-          'refs/heads/main' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
+        if: steps.ml.outputs.has_updated_sources == 1 && ( env.APPLY_FIXES_EVENT
+          == 'all' || env.APPLY_FIXES_EVENT == github.event_name ) &&
+          env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' &&
+          ( github.event_name == 'push' ||
+          github.event.pull_request.head.repo.full_name == github.repository )
+          && !contains(github.event.head_commit.message, 'skip fix')
         with:
           branch: >-
             ${{
