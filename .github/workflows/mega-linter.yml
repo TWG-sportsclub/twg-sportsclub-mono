@@ -27,6 +27,7 @@ env:
   # If APPLY_FIXES is used, defines if the fixes are directly committed (commit)
   # or posted in a PR (pull_request)
   APPLY_FIXES_MODE: commit
+
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
@@ -34,10 +35,6 @@ jobs:
   megalinter:
     name: MegaLinter
     runs-on: ubuntu-latest
-    env:
-      MEGALINTER_VERSION: c0594d1637fd774fb390afb04c062d8f9496924e
-      MEGALINTER_IMAGE: oxsecurity/megalinter
-      IMAGE_TAR_PATH: megalinter_image.tar
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
     permissions:
@@ -46,13 +43,13 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+
     steps:
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-          set-safe-directory: "/github/workspace/.git"
           fetch-depth: 0
 
       - name: Set ownership
@@ -64,11 +61,11 @@ jobs:
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
         with:
           path: /tmp/docker-images.tar
-          key: ${{ runner.os }}-megalinter-${{ env.MEGALINTER_VERSION }}
+          key: ${{ runner.os }}-megalinter-$MEGALINTER_VERSION
 
       - if: steps.image-cache.outputs.cache-hit != 'true'
         run: |
-          docker pull oxsecurity/megalinter@${{ env.MEGALINTER_VERSION }}
+          docker pull oxsecurity/megalinter@c0594d1637fd774fb390afb04c062d8f9496924e
           docker save -o /tmp/docker-images.tar alpine
 
       - if: steps.image-cache.outputs.cache-hit == 'true'
@@ -87,17 +84,17 @@ jobs:
       # MegaLinter
       - name: MegaLinter
         id: ml
-        uses: oxsecurity/megalinter@${{ env.MEGALINTER_VERSION }}
+        uses: oxsecurity/megalinter@c0594d1637fd774fb390afb04c062d8f9496924e
         with:
           args: "APPLY_FIXES=${{ env.APPLY_FIXES }}"
-        env:
-          MEGALINTER_VERSION: ${{ env.MEGALINTER_VERSION }}
-          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: true
+        # env:
+        #   MEGALINTER_VERSION: $MEGALINTER_VERSION
+        #   GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+        #   VALIDATE_ALL_CODEBASE: true
 
       - name: Save MegaLinter Docker image to cache
         run: |
-          docker save  oxsecurity/megalinter:${{ env.MEGALINTER_VERSION }} > /tmp/docker-images.tar
+          docker save  oxsecurity/megalinter@c0594d1637fd774fb390afb04c062d8f9496924e> /tmp/docker-images.tar
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
