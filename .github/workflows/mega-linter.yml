@@ -58,40 +58,32 @@ jobs:
           # improve performance
           fetch-depth: 0
 
-      # - name: Cache Docker images.
-      #   uses: ScribeMD/docker-cache@0.5.0
-      #   with:
-      #     key: docker-${{ runner.os }}-${{ hashFiles(github.action_path) }}
+      - name: Cache MegaLinter Docker image
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
+        with:
+          path: /tmp/docker-images.tar
+          key: ${{ runner.os }}-megalinter-${{ env.MEGALINTER_VERSION }}
+
+      - name: Load MegaLinter Docker image from cache
+        run: |
+          if [ -f "/tmp/docker-images.tar" ]; then
+            docker load -i /tmp/docker-images.tar
+          fi
 
       # MegaLinter
       - name: MegaLinter
-
-        # You can override MegaLinter flavor used to have faster performances
-        # More info at https://megalinter.io/latest/flavors/
         id: ml
         uses: oxsecurity/megalinter@a7a0163b6c8ff7474a283d99a706e27483ddd80f
-
-        # All available variables are described in documentation
-        # https://megalinter.io/latest/config-file/
+        with:
+          args: "APPLY_FIXES=${{ env.APPLY_FIXES }}"
         env:
-          # Validates all source when push on main, else just the git diff with
-          # main. Override with true if you always want to lint all sources
-          #
-          # To validate the entire codebase, set to:
-          # VALIDATE_ALL_CODEBASE: true
-          #
-          # To validate only diff with main, set to:
-          # VALIDATE_ALL_CODEBASE: >-
-          #   ${{
-          #     github.event_name == 'push' &&
-          #     github.ref == 'refs/heads/main'
-          #   }}
+          MEGALINTER_VERSION: ${{ env.MEGALINTER_VERSION }}
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
 
-          # ADD YOUR CUSTOM ENV VARIABLES HERE TO OVERRIDE VALUES OF
-          # .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
-          fix: true
+      - name: Save MegaLinter Docker image to cache
+        run: |
+          docker save  oxsecurity/megalinter:${{ env.MEGALINTER_VERSION }} > /tmp/docker-images.tar
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
