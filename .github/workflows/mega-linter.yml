@@ -26,7 +26,7 @@ env:
 
   # If APPLY_FIXES is used, defines if the fixes are directly committed (commit)
   # or posted in a PR (pull_request)
-  APPLY_FIXES_MODE: pull_request
+  APPLY_FIXES_MODE: commit
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
@@ -82,19 +82,11 @@ jobs:
           #     github.ref == 'refs/heads/main'
           #   }}
           VALIDATE_ALL_CODEBASE: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
 
-      - name: Lint YAML files
-        uses: opt-nc/yamlfixer-action@48ab36469dc1267d942af9ccb6eb83c4260f0f92
-
-        with:
-          options: --summary
-          user: ${{ github.actor }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      # ADD YOUR CUSTOM ENV VARIABLES HERE TO OVERRIDE VALUES OF
-      # .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
-
+          # ADD YOUR CUSTOM ENV VARIABLES HERE TO OVERRIDE VALUES OF
+          # .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
+          fix: true
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
@@ -111,17 +103,13 @@ jobs:
         uses: peter-evans/create-pull-request@70a41aba780001da0a30141984ae2a0c95d8704e
         id: cpr
         if: >-
-          steps.ml.outputs.has_updated_sources == 1 &&
-          (
+          steps.ml.outputs.has_updated_sources == 1 && (
             env.APPLY_FIXES_EVENT == 'all' ||
             env.APPLY_FIXES_EVENT == github.event_name
-          ) &&
-          env.APPLY_FIXES_MODE == 'pull_request' &&
-          (
+          ) && env.APPLY_FIXES_MODE == 'pull_request' && (
             github.event_name == 'push' ||
             github.event.pull_request.head.repo.full_name == github.repository
-          ) &&
-          !contains(github.event.head_commit.message, 'skip fix')
+          ) && !contains(github.event.head_commit.message, 'skip fix')
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
@@ -130,17 +118,13 @@ jobs:
 
       - name: Create PR output
         if: >-
-          steps.ml.outputs.has_updated_sources == 1 &&
-          (
+          steps.ml.outputs.has_updated_sources == 1 && (
             env.APPLY_FIXES_EVENT == 'all' ||
             env.APPLY_FIXES_EVENT == github.event_name
-          ) &&
-          env.APPLY_FIXES_MODE == 'pull_request' &&
-          (
+          ) && env.APPLY_FIXES_MODE == 'pull_request' && (
             github.event_name == 'push' ||
             github.event.pull_request.head.repo.full_name == github.repository
-          ) &&
-          !contains(github.event.head_commit.message, 'skip fix')
+          ) && !contains(github.event.head_commit.message, 'skip fix')
         run: |
           echo "PR Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "PR URL - ${{ steps.cpr.outputs.pull-request-url }}"
@@ -149,35 +133,27 @@ jobs:
       # (for now works only on PR from same repository, not from forks)
       - name: Prepare commit
         if: >-
-          steps.ml.outputs.has_updated_sources == 1 &&
-          (
+          steps.ml.outputs.has_updated_sources == 1 && (
             env.APPLY_FIXES_EVENT == 'all' ||
             env.APPLY_FIXES_EVENT == github.event_name
-          ) &&
-          env.APPLY_FIXES_MODE == 'commit' &&
-          github.ref != 'refs/heads/main' &&
-          (
+          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref !=
+          'refs/heads/main' && (
             github.event_name == 'push' ||
             github.event.pull_request.head.repo.full_name == github.repository
-          ) &&
-          !contains(github.event.head_commit.message, 'skip fix')
+          ) && !contains(github.event.head_commit.message, 'skip fix')
         run: sudo chown -Rc $UID .git/
 
       - name: Commit and push applied linter fixes
         uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d
         if: >-
-          steps.ml.outputs.has_updated_sources == 1 &&
-          (
+          steps.ml.outputs.has_updated_sources == 1 && (
             env.APPLY_FIXES_EVENT == 'all' ||
             env.APPLY_FIXES_EVENT == github.event_name
-          ) &&
-          env.APPLY_FIXES_MODE == 'commit' &&
-          github.ref != 'refs/heads/main' &&
-          (
+          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref !=
+          'refs/heads/main' && (
             github.event_name == 'push' ||
             github.event.pull_request.head.repo.full_name == github.repository
-          ) &&
-          !contains(github.event.head_commit.message, 'skip fix')
+          ) && !contains(github.event.head_commit.message, 'skip fix')
         with:
           branch: >-
             ${{
