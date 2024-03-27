@@ -274,7 +274,9 @@
     "pidtree",
     "rfdc",
     "pseudomap",
-    "lintstagedrc"
+    "lintstagedrc",
+    "yamlfixer",
+    "lycheecache"
   ],
   "version": "0.2"
 }
