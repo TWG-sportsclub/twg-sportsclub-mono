@@ -86,7 +86,6 @@ jobs:
           #     github.event_name == 'push' &&
           #     github.ref == 'refs/heads/main'
           #   }}
-          DEFAULT_WORKSPACE: twg_sportsclub_mono
           VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
 
