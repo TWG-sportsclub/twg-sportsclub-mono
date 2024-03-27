@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "strict": true
   },
+  "files": [],
   // NEW: Options for file/directory watching
   "watchOptions": {
     // Use native file system events for files and directories
@@ -17,7 +18,7 @@
     // Finally, two additional settings for reducing the amount of possible
     // files to track  work from these directories
     "excludeDirectories": ["**/node_modules", "_build"],
-    "excludeFiles": ["build/fileWhichChangesOften.ts"]
+    "excludeFiles": []
   },
   "exclude": ["node_modules"]
 }

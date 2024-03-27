@@ -51,7 +51,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           set-safe-directory: "/github/workspace/.git"
 
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
@@ -123,7 +123,7 @@ jobs:
           ) &&
           !contains(github.event.head_commit.message, 'skip fix')
         with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           title: "[MegaLinter] Apply linters automatic fixes"
           labels: bot

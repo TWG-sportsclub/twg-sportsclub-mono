@@ -22,17 +22,17 @@
       "hasNamespace": false,
       "type": 1,
       "moduleName": "page",
-      "relativePath": "apps/client/.next/types/app/page"
+      "relativePath": ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page"
     },
     "LayoutProps": {
       "hasNamespace": false,
       "type": 1,
       "moduleName": "page",
-      "relativePath": "apps/client/.next/types/app/page"
+      "relativePath": ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page"
     }
   },
   "files": {
-    "apps/client/.next/types/app/layout.ts": "2024-03-26T01:49:44.333Z",
+    "apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
     "apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
     "apps/api/src/main.ts": "2024-03-22T03:28:52.218Z",
     "apps/api/src/app.controller.ts": "2024-03-21T03:00:13.450Z",
@@ -45,6 +45,8 @@
     "apps/api/dist/app.module.d.ts": "2024-03-26T01:49:40.597Z",
     "apps/api/test/app.e2e-spec.ts": "2024-03-21T03:00:13.450Z",
     "apps/client/tailwind.config.ts": "2024-03-21T03:02:15.560Z",
-    "apps/client/next-env.d.ts": "2024-03-21T03:02:15.549Z"
+    "apps/client/next-env.d.ts": "2024-03-21T03:02:15.549Z",
+    ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
+    ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z"
   }
 }
