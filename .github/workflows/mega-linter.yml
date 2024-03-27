@@ -35,7 +35,7 @@ jobs:
     name: MegaLinter
     runs-on: ubuntu-latest
     env:
-      MEGALINTER_VERSION: a7a0163b6c8ff7474a283d99a706e27483ddd80f
+      MEGALINTER_VERSION: c0594d1637fd774fb390afb04c062d8f9496924e
       MEGALINTER_IMAGE: oxsecurity/megalinter
       IMAGE_TAR_PATH: megalinter_image.tar
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
@@ -68,7 +68,7 @@ jobs:
 
       - if: steps.image-cache.outputs.cache-hit != 'true'
         run: |
-          docker pull docker pull oxsecurity/megalinter:v7.10.0
+          docker pull oxsecurity/megalinter@${{ env.MEGALINTER_VERSION }}
           docker save -o /tmp/docker-images.tar alpine
 
       - if: steps.image-cache.outputs.cache-hit == 'true'
@@ -87,7 +87,7 @@ jobs:
       # MegaLinter
       - name: MegaLinter
         id: ml
-        uses: oxsecurity/megalinter@a7a0163b6c8ff7474a283d99a706e27483ddd80f
+        uses: oxsecurity/megalinter@${{ env.MEGALINTER_VERSION }}
         with:
           args: "APPLY_FIXES=${{ env.APPLY_FIXES }}"
         env:
@@ -98,6 +98,7 @@ jobs:
       - name: Save MegaLinter Docker image to cache
         run: |
           docker save  oxsecurity/megalinter:${{ env.MEGALINTER_VERSION }} > /tmp/docker-images.tar
+
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
