@@ -61,36 +61,21 @@ jobs:
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
         with:
           path: /tmp/docker-images.tar
-          key: ${{ runner.os }}-megalinter-$MEGALINTER_VERSION
+          key: ${{ runner.os }}-megalinter-${{env.MEGALINTER_VERSION}}
 
       - if: steps.image-cache.outputs.cache-hit != 'true'
         run: |
-          docker pull oxsecurity/megalinter@c0594d1637fd774fb390afb04c062d8f9496924e
-          docker save -o /tmp/docker-images.tar alpine
+          docker pull oxsecurity/megalinter
+          docker save  oxsecurity/megalinter > /tmp/docker-images.tar
 
       - if: steps.image-cache.outputs.cache-hit == 'true'
         run: |
           docker load -i /tmp/docker-images.tar
 
-      # - name: Load MegaLinter Docker image from cache
-      #   run: |
-      #     if [ -f "/tmp/docker-images.tar" ]; then
-      #       docker load -i /tmp/docker-images.tar
-      #     fi
-      # - name: Move cache
-      #   run: |
-      #     rm -rf /tmp/docker-images.tar
-      #     mv /tmp/docker-images-new.tar /tmp/docker-images.tar
       # MegaLinter
       - name: MegaLinter
         id: ml
         uses: oxsecurity/megalinter@c0594d1637fd774fb390afb04c062d8f9496924e
-        with:
-          args: "APPLY_FIXES=${{ env.APPLY_FIXES }}"
-        # env:
-        #   MEGALINTER_VERSION: $MEGALINTER_VERSION
-        #   GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-        #   VALIDATE_ALL_CODEBASE: true
 
       - name: Save MegaLinter Docker image to cache
         run: |
