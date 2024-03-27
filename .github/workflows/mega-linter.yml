@@ -35,9 +35,6 @@ jobs:
     name: MegaLinter
     runs-on: ubuntu-latest
     env:
-      MEGALINTER_VERSION: a7a0163b6c8ff7474a283d99a706e27483ddd80f
-      MEGALINTER_IMAGE: oxsecurity/megalinter
-      IMAGE_TAR_PATH: megalinter_image.tar
     # Give the default GITHUB_TOKEN write permission to commit and push, comment
     # issues, and post new Pull Requests; remove the ones you do not need
     permissions:
