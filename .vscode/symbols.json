@@ -3,20 +3,20 @@
     "AppController": {
       "hasNamespace": false,
       "type": 0,
-      "moduleName": "app.controller.d",
-      "relativePath": "apps/api/dist/app.controller.d"
+      "moduleName": "app.controller",
+      "relativePath": "apps/api/src/app.controller"
     },
     "AppModule": {
       "hasNamespace": false,
       "type": 0,
-      "moduleName": "app.module.d",
-      "relativePath": "apps/api/dist/app.module.d"
+      "moduleName": "app.module",
+      "relativePath": "apps/api/src/app.module"
     },
     "AppService": {
       "hasNamespace": false,
       "type": 0,
-      "moduleName": "app.service.d",
-      "relativePath": "apps/api/dist/app.service.d"
+      "moduleName": "app.service",
+      "relativePath": "apps/api/src/app.service"
     },
     "PageProps": {
       "hasNamespace": false,
@@ -34,16 +34,16 @@
   "files": {
     "apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
     "apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
-    "apps/api/src/main.ts": "2024-03-22T03:28:52.218Z",
-    "apps/api/src/app.controller.ts": "2024-03-21T03:00:13.450Z",
-    "apps/api/src/app.controller.spec.ts": "2024-03-21T03:00:13.450Z",
-    "apps/api/src/app.module.ts": "2024-03-21T03:00:13.450Z",
-    "apps/api/src/app.service.ts": "2024-03-21T03:00:13.450Z",
+    "apps/api/src/main.ts": "2024-03-27T05:49:11.569Z",
+    "apps/api/src/app.controller.ts": "2024-03-27T05:49:11.555Z",
+    "apps/api/src/app.controller.spec.ts": "2024-03-27T05:49:11.547Z",
+    "apps/api/src/app.module.ts": "2024-03-27T05:49:11.561Z",
+    "apps/api/src/app.service.ts": "2024-03-27T05:49:11.564Z",
     "apps/api/dist/app.service.d.ts": "2024-03-26T01:49:40.628Z",
     "apps/api/dist/app.controller.d.ts": "2024-03-26T01:49:40.569Z",
     "apps/api/dist/main.d.ts": "2024-03-21T03:20:04.346Z",
     "apps/api/dist/app.module.d.ts": "2024-03-26T01:49:40.597Z",
-    "apps/api/test/app.e2e-spec.ts": "2024-03-21T03:00:13.450Z",
+    "apps/api/test/app.e2e-spec.ts": "2024-03-27T05:49:11.589Z",
     "apps/client/tailwind.config.ts": "2024-03-21T03:02:15.560Z",
     "apps/client/next-env.d.ts": "2024-03-21T03:02:15.549Z",
     ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
