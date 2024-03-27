@@ -5,6 +5,12 @@
     "editor.findMatchBackground": "#009032",
     "editor.findMatchBorder": "#00ff1aeb",
     "editor.findMatchHighlightBackground": "#006100e3",
-    "editor.findMatchHighlightBorder": "#007733"
+    "editor.findMatchHighlightBorder": "#007733",
+    "editor.selectionBackground": "#6500ca",
+    "editor.selectionHighlightBackground": "#aaffb15a",
+    "editor.selectionHighlightBorder": "#1eff0034",
+    "editorCursor.background": "#7b29ff",
+    "editorCursor.foreground": "#feffe9",
+    "editorLineNumber.activeForeground": "#6aff68"
   }
 }

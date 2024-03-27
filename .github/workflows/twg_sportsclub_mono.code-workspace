@@ -18,10 +18,7 @@
       "editor.findMatchHighlightBackground": "#006100e3",
       "editor.findMatchHighlightBorder": "#007733",
       "editor.selectionBackground": "#3a25f9e2",
-      "sideBarTitle.foreground": "#7d18c0",
-      "statusBar.background": "#7d18c0",
-      "statusBar.foreground": "#ffffff",
-      "tab.activeBorder": "#7d18c0"
+      "sideBarTitle.foreground": "#7d18c0"
     },
     "ColorfulMonorepo.workspaces.collection": [
       {

@@ -1,17 +1,5 @@
 {
   "symbols": {
-    "PageProps": {
-      "hasNamespace": false,
-      "type": 1,
-      "moduleName": "page",
-      "relativePath": "apps/client/.next/types/app/page"
-    },
-    "LayoutProps": {
-      "hasNamespace": false,
-      "type": 1,
-      "moduleName": "page",
-      "relativePath": "apps/client/.next/types/app/page"
-    },
     "AppController": {
       "hasNamespace": false,
       "type": 0,
@@ -29,11 +17,23 @@
       "type": 0,
       "moduleName": "app.service.d",
       "relativePath": "apps/api/dist/app.service.d"
+    },
+    "PageProps": {
+      "hasNamespace": false,
+      "type": 1,
+      "moduleName": "page",
+      "relativePath": "apps/client/.next/types/app/page"
+    },
+    "LayoutProps": {
+      "hasNamespace": false,
+      "type": 1,
+      "moduleName": "page",
+      "relativePath": "apps/client/.next/types/app/page"
     }
   },
   "files": {
     "apps/client/.next/types/app/layout.ts": "2024-03-26T01:49:44.333Z",
-    "apps/client/.next/types/app/page.ts": "2024-03-26T01:49:44.345Z",
+    "apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
     "apps/api/src/main.ts": "2024-03-22T03:28:52.218Z",
     "apps/api/src/app.controller.ts": "2024-03-21T03:00:13.450Z",
     "apps/api/src/app.controller.spec.ts": "2024-03-21T03:00:13.450Z",
