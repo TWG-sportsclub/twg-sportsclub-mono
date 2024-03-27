@@ -53,23 +53,37 @@ jobs:
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           set-safe-directory: "/github/workspace/.git"
-
-          # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
-          # improve performance
           fetch-depth: 0
 
+      - name: Set ownership
+        run: |
+          chown -R $(id -u):$(id -g) $PWD
+
       - name: Cache MegaLinter Docker image
+        id: image-cache
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
         with:
           path: /tmp/docker-images.tar
           key: ${{ runner.os }}-megalinter-${{ env.MEGALINTER_VERSION }}
 
-      - name: Load MegaLinter Docker image from cache
+      - if: steps.image-cache.outputs.cache-hit != 'true'
         run: |
-          if [ -f "/tmp/docker-images.tar" ]; then
-            docker load -i /tmp/docker-images.tar
-          fi
+          docker pull docker pull oxsecurity/megalinter:v7.10.0
+          docker save -o /tmp/docker-images.tar alpine
 
+      - if: steps.image-cache.outputs.cache-hit == 'true'
+        run: |
+          docker load -i /tmp/docker-images.tar
+
+      # - name: Load MegaLinter Docker image from cache
+      #   run: |
+      #     if [ -f "/tmp/docker-images.tar" ]; then
+      #       docker load -i /tmp/docker-images.tar
+      #     fi
+      # - name: Move cache
+      #   run: |
+      #     rm -rf /tmp/docker-images.tar
+      #     mv /tmp/docker-images-new.tar /tmp/docker-images.tar
       # MegaLinter
       - name: MegaLinter
         id: ml
