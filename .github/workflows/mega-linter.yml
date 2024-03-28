@@ -46,11 +46,8 @@ jobs:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Debugging ownership
-        run: |
-          ls -ld .git
-          whoami
-          id
+      - name: Set ownership for .git directory
+        run: sudo chown -R "$UID:$GID" .git
 
       # - name: Set ownership
       #   run: |
