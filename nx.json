@@ -15,7 +15,8 @@
     "e2e": {
       "cache": true
     },
-    "tsc": {
+    "typecheck": {
+      "executor": "nx:run-commands",
       "cache": true
     }
   },
