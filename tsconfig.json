@@ -1,20 +1,14 @@
 {
+  "files": [],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "CommonJS",
-    "strict": true,
-    "experimentalDecorators": true
+    "disableSourceOfProjectReferenceRedirect": true
   },
-
-  "watchOptions": {
-    "watchFile": "useFsEvents",
-    "watchDirectory": "useFsEvents",
-
-    "fallbackPolling": "dynamicPriority",
-
-    "synchronousWatchDirectory": true,
-    "excludeDirectories": ["**/node_modules", "_build"],
-    "excludeFiles": []
-  },
-  "exclude": ["node_modules"]
+  "references": [
+    {
+      "path": "./apps/api"
+    },
+    {
+      "path": "./apps/client"
+    }
+  ]
 }

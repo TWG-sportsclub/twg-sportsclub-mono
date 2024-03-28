@@ -4,13 +4,13 @@
       "hasNamespace": false,
       "type": 1,
       "moduleName": "page",
-      "relativePath": ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page"
+      "relativePath": ".nx/cache/8041795371975074406/outputs/apps/client/.next/types/app/page"
     },
     "LayoutProps": {
       "hasNamespace": false,
       "type": 1,
       "moduleName": "page",
-      "relativePath": ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page"
+      "relativePath": ".nx/cache/8041795371975074406/outputs/apps/client/.next/types/app/page"
     },
     "AppController": {
       "hasNamespace": false,
@@ -32,8 +32,8 @@
     }
   },
   "files": {
-    "apps/client/.next/types/app/layout.ts": "2024-03-28T02:25:53.240Z",
-    "apps/client/.next/types/app/page.ts": "2024-03-28T02:25:53.241Z",
+    "apps/client/.next/types/app/layout.ts": "2024-03-28T06:10:11.718Z",
+    "apps/client/.next/types/app/page.ts": "2024-03-28T06:10:11.718Z",
     "apps/api/src/main.ts": "2024-03-28T03:58:26.416Z",
     "apps/api/src/app.controller.ts": "2024-03-28T03:58:26.416Z",
     "apps/api/src/app.controller.spec.ts": "2024-03-28T03:58:26.416Z",
@@ -49,6 +49,10 @@
     ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
     ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
     ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/layout.ts": "2024-03-28T02:25:53.240Z",
-    ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page.ts": "2024-03-28T02:25:53.241Z"
+    ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page.ts": "2024-03-28T02:25:53.241Z",
+    ".nx/cache/4649189837451217182/outputs/apps/client/.next/types/app/layout.ts": "2024-03-28T06:10:11.718Z",
+    ".nx/cache/4649189837451217182/outputs/apps/client/.next/types/app/page.ts": "2024-03-28T06:10:11.718Z",
+    ".nx/cache/8041795371975074406/outputs/apps/client/.next/types/app/layout.ts": "2024-03-28T05:52:28.753Z",
+    ".nx/cache/8041795371975074406/outputs/apps/client/.next/types/app/page.ts": "2024-03-28T05:52:28.753Z"
   }
 }

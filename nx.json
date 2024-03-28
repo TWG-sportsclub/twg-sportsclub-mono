@@ -14,15 +14,6 @@
     },
     "e2e": {
       "cache": true
-    },
-    "typecheck": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["tsc --noEmit"],
-        "cwd": "apps/{projectRoot}",
-        "parallel": false
-      },
-      "cache": true
     }
   },
   "installation": {
