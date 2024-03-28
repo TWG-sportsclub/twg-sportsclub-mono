@@ -1,0 +1,46 @@
+{
+  "name": "rspack-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rspack-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "outputPath": "dist/apps/rspack-api",
+        "main": "apps/rspack-api/src/main.ts",
+        "tsConfig": "apps/rspack-api/tsconfig.app.json",
+        "rspackConfig": "apps/rspack-api/rspack.config.js",
+        "assets": ["apps/rspack-api/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rspack-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rspack-api:build:development"
+        },
+        "production": {
+          "buildTarget": "rspack-api:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

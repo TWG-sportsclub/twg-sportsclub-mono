@@ -1,4 +1,4 @@
 {
   "*": "prettier --write",
-  "{apps,libs}/**/*.{ts,js}": "$(files) => { return `nx affected --target=typecheck --files=${files.join(',')}`}"
+  "{apps,libs}/**/*.{ts,js}": "nx affected --target=typecheck --files"
 }

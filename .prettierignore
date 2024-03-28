@@ -4,6 +4,7 @@
 /.nx/cache
 .gitignore
 .prettierignore
+.eslintignore
 pnpm-lock.yaml
 /megalinter-reports
 /node_modules
