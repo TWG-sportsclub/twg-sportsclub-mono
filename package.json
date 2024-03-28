@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Make every game exciting",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "build": "pnpm exec nx run-many --target=build"
   },
   "keywords": [],
   "author": "Antonio Reid",
