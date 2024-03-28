@@ -4,3 +4,4 @@
 /.nx/cache
 .gitignore
 .prettierignore
+pnpm-lock.yaml
