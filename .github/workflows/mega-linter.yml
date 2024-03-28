@@ -45,6 +45,8 @@ jobs:
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          set-safe-directory: "$PWD"
+
       - run: git config --global --add safe.directory "$PWD"
 
       - run: git config safe.directory
