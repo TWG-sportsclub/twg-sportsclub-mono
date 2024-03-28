@@ -1,8 +1,8 @@
 {
   "name": "@sportsclub/api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Make every game exciting",
+  "author": "Antonio Reid",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

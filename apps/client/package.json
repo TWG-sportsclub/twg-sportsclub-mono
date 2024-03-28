@@ -6,8 +6,7 @@
     "dev": "nx dev -p 3001",
     "build": "nx build",
     "start": "nx start",
-    "lint": "next lint",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "lint": "next lint"
   },
   "dependencies": {
     "react": "^18",

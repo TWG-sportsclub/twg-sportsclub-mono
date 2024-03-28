@@ -45,6 +45,7 @@ jobs:
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+      - run: git config --system --add safe.directory /github/workspace
 
       - name: Set ownership
         run: |
