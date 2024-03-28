@@ -56,22 +56,6 @@ jobs:
         run: |
           chown -R $(id -u):$(id -g) $PWD
 
-      - name: Cache MegaLinter Docker image
-        id: image-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
-        with:
-          path: /tmp/docker-images.tar
-          key: ${{ runner.os }}-megalinter-${{env.MEGALINTER_VERSION}}
-
-      - if: steps.image-cache.outputs.cache-hit != 'true'
-        run: |
-          docker pull oxsecurity/megalinter
-          docker save  oxsecurity/megalinter > /tmp/docker-images.tar
-
-      - if: steps.image-cache.outputs.cache-hit == 'true'
-        run: |
-          docker load -i /tmp/docker-images.tar
-
       # MegaLinter
       - name: MegaLinter
         id: ml
