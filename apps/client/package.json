@@ -7,7 +7,7 @@
     "build": "nx build",
     "start": "nx start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "nx exec -- tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "react": "^18",
@@ -26,6 +26,8 @@
     "eslint-config-next": "14.1.4"
   },
   "nx": {
-    "includedScripts": []
+    "includedScripts": [
+      "typecheck"
+    ]
   }
 }

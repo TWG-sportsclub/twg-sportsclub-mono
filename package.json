@@ -10,7 +10,7 @@
     "format:write": "pnpm format --write",
     "lint": "pnpm exec nx run-many --target=lint",
     "typecheck": "pnpm exec nx run-many --target=typecheck",
-    "validate": "pnpm format:write && pnpm tsc && pnpm lint"
+    "validate": "pnpm format:write && pnpm typecheck && pnpm lint"
   },
   "keywords": [],
   "author": "Antonio Reid",
