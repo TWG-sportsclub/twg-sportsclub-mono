@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set ownership for .git directory
-        run: sudo chown -R "$UID:$GID" .git
+        run: sudo chown -R runner:docker .git
 
       # - name: Set ownership
       #   run: |
