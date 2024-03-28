@@ -1,7 +1,7 @@
 {
   "name": "sportsclub",
   "version": "1.0.0",
-  "description": "Make every game excting",
+  "description": "Make every game exciting",
   "scripts": {
     "prepare": "husky"
   },

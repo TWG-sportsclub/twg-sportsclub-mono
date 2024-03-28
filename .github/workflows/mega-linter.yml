@@ -47,9 +47,11 @@ jobs:
           fetch-depth: 0
       - run: git config --global --add safe.directory "$PWD"
 
-      - name: Set ownership
-        run: |
-          chown -R $(id -u):$(id -g) "$PWD"
+      - run: git config safe.directory
+
+      # - name: Set ownership
+      #   run: |
+      #     chown -R $(id -u):$(id -g) "$PWD"
 
       - name: MegaLinter
         id: ml
