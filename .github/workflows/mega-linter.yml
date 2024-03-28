@@ -48,7 +48,7 @@ jobs:
 
       - name: Set ownership
         run: |
-          chown -R $(id -u):$(id -g) $(PWD)
+          chown -R $(id -u):$(id -g) "$PWD"
 
       - name: MegaLinter
         id: ml
