@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "CommonJS",
-    "strict": true
+    "strict": true,
+    "experimentalDecorators": true
   },
 
   "watchOptions": {
