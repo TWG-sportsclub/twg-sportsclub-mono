@@ -4,7 +4,13 @@
   "description": "Make every game exciting",
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm exec nx run-many --target=build"
+    "build": "pnpm exec nx run-many --target=build",
+    "format": "prettier \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "pnpm format --check",
+    "format:write": "pnpm format --write",
+    "lint": "pnpm exec nx run-many --target=lint",
+    "tsc": "pnpm exec nx run-many --target=tsc",
+    "validate": "pnpm format:format:write && pnpm tsc && pnpm lint"
   },
   "keywords": [],
   "author": "Antonio Reid",

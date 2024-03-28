@@ -1,5 +1,17 @@
 {
   "symbols": {
+    "PageProps": {
+      "hasNamespace": false,
+      "type": 1,
+      "moduleName": "page",
+      "relativePath": ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page"
+    },
+    "LayoutProps": {
+      "hasNamespace": false,
+      "type": 1,
+      "moduleName": "page",
+      "relativePath": ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page"
+    },
     "AppController": {
       "hasNamespace": false,
       "type": 0,
@@ -17,36 +29,26 @@
       "type": 0,
       "moduleName": "app.service",
       "relativePath": "apps/api/src/app.service"
-    },
-    "PageProps": {
-      "hasNamespace": false,
-      "type": 1,
-      "moduleName": "page",
-      "relativePath": ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page"
-    },
-    "LayoutProps": {
-      "hasNamespace": false,
-      "type": 1,
-      "moduleName": "page",
-      "relativePath": ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page"
     }
   },
   "files": {
-    "apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
-    "apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
-    "apps/api/src/main.ts": "2024-03-27T05:49:11.569Z",
-    "apps/api/src/app.controller.ts": "2024-03-27T05:49:11.555Z",
-    "apps/api/src/app.controller.spec.ts": "2024-03-27T05:49:11.547Z",
-    "apps/api/src/app.module.ts": "2024-03-27T05:49:11.561Z",
-    "apps/api/src/app.service.ts": "2024-03-27T05:49:11.564Z",
+    "apps/client/.next/types/app/layout.ts": "2024-03-28T02:25:53.240Z",
+    "apps/client/.next/types/app/page.ts": "2024-03-28T02:25:53.241Z",
+    "apps/api/src/main.ts": "2024-03-28T03:58:26.416Z",
+    "apps/api/src/app.controller.ts": "2024-03-28T03:58:26.416Z",
+    "apps/api/src/app.controller.spec.ts": "2024-03-28T03:58:26.416Z",
+    "apps/api/src/app.module.ts": "2024-03-28T03:58:26.416Z",
+    "apps/api/src/app.service.ts": "2024-03-28T03:58:26.416Z",
     "apps/api/dist/app.service.d.ts": "2024-03-26T01:49:40.628Z",
     "apps/api/dist/app.controller.d.ts": "2024-03-26T01:49:40.569Z",
     "apps/api/dist/main.d.ts": "2024-03-21T03:20:04.346Z",
     "apps/api/dist/app.module.d.ts": "2024-03-26T01:49:40.597Z",
-    "apps/api/test/app.e2e-spec.ts": "2024-03-27T05:49:11.589Z",
-    "apps/client/tailwind.config.ts": "2024-03-21T03:02:15.560Z",
+    "apps/api/test/app.e2e-spec.ts": "2024-03-28T03:58:26.417Z",
+    "apps/client/tailwind.config.ts": "2024-03-28T03:58:26.417Z",
     "apps/client/next-env.d.ts": "2024-03-21T03:02:15.549Z",
     ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/layout.ts": "2024-03-27T01:06:27.299Z",
-    ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z"
+    ".nx/cache/14713682735082189741/outputs/apps/client/.next/types/app/page.ts": "2024-03-27T01:06:27.299Z",
+    ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/layout.ts": "2024-03-28T02:25:53.240Z",
+    ".nx/cache/18163865977421777322/outputs/apps/client/.next/types/app/page.ts": "2024-03-28T02:25:53.241Z"
   }
 }

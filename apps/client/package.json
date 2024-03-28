@@ -6,7 +6,8 @@
     "dev": "nx dev -p 3001",
     "build": "nx build",
     "start": "nx start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc"
   },
   "dependencies": {
     "react": "^18",

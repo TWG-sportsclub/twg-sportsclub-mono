@@ -5,3 +5,5 @@
 .gitignore
 .prettierignore
 pnpm-lock.yaml
+/megalinter-reports
+/node_modules
