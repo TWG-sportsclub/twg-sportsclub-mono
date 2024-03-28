@@ -1,8 +1,7 @@
 {
   "name": "sportsclub",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Make every game excting",
   "scripts": {
     "prepare": "husky"
   },
