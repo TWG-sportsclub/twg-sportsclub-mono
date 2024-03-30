@@ -276,7 +276,21 @@
     "pseudomap",
     "lintstagedrc",
     "yamlfixer",
-    "lycheecache"
+    "lycheecache",
+    "Buildable",
+    "bson",
+    "wanews",
+    "discoveryjs",
+    "loong",
+    "riscv",
+    "sunos",
+    "tsup",
+    "mrmime",
+    "totalist",
+    "joycon",
+    "rollup",
+    "sirv",
+    "sortby"
   ],
   "version": "0.2"
 }
