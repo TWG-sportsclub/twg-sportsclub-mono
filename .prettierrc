@@ -3,5 +3,14 @@
   "trailingComma": "all",
   "semi": false,
   "printWidth": 80,
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "plugins": ["prettier-plugin-ini"],
+  "overrides": [
+    {
+      "files": "*.npmrc",
+      "options": {
+        "parser": "ini"
+      }
+    }
+  ]
 }

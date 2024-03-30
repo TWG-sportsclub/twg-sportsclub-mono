@@ -16,7 +16,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: ["dist/*"],
   rules: {
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -33,6 +33,12 @@ module.exports = {
         sourceType: "module",
       },
       rules: {},
+    },
+    {
+      files: ["rspack.config.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
+      },
     },
   ],
 }

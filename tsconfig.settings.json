@@ -5,10 +5,11 @@
     "noEmit": false,
     "composite": true,
     "incremental": true,
-    "target": "esnext",
-    "module": "CommonJS",
+    "target": "es2021",
     "strict": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "esModuleInterop": true
   },
   "watchOptions": {
     "watchFile": "useFsEvents",

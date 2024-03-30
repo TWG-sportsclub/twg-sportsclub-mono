@@ -1,16 +1,13 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
+    "module": "esnext",
+    "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -21,7 +18,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "outDir": "./out-tsc",
+    "outDir": "../../dist/out-tsc",
     "rootDir": "."
   },
   "include": [
