@@ -8,7 +8,7 @@ const config = {
   context: __dirname,
   target: "node",
   entry: {
-    main: "./src/main.ts",
+    main: ["./src/main.ts"],
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".js", ".jsx"],
@@ -56,7 +56,11 @@ const config = {
         name: "main.js",
         autoRestart: false,
       }),
-    new ForkTsCheckerWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        mode: "write-references",
+      },
+    }),
   ].filter(Boolean),
   devServer: {
     devMiddleware: {
