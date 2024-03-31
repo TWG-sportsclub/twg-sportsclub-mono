@@ -1,4 +1,0 @@
-{
-  "*": "prettier --write",
-  "{apps,libs}/**/*.{ts,js}": "nx affected --target=typecheck --files"
-}
