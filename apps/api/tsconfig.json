@@ -2,22 +2,18 @@
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": true,
     "removeComments": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "rootDir": ".",
-    "esModuleInterop": true
+    "rootDir": "."
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"],

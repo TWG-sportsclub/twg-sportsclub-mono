@@ -5,11 +5,9 @@
     "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "jsx": "preserve",
-    "incremental": true,
     "plugins": [
       {
         "name": "next"
@@ -26,8 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.ts"
+    "tailwind.config.ts",
+    "**/*.js"
   ],
-  "exclude": ["node_modules"],
-  "references": []
+  "exclude": ["node_modules", "dist", ".next"]
 }

@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "husky",
     "build": "pnpm exec nx run-many --target=build",
-    "format": "prettier \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format": "prettier \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-unknown --ignore-path .gitignore",
     "format:check": "pnpm format --check",
     "format:write": "pnpm format --write",
     "lint": "pnpm exec nx run-many --target=lint",
@@ -27,6 +27,7 @@
     "@nestjs/platform-express": "^10.3.7",
     "@nx/workspace": "18.2.1",
     "buffer-from": "^1.1.2",
+    "eslint-plugin-jest": "^27.9.0",
     "globals": "^15.0.0",
     "methods": "^1.1.2",
     "next": "^14.1.4",
