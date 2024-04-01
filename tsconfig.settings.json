@@ -21,5 +21,10 @@
     "excludeDirectories": ["**/node_modules", "_build"],
     "excludeFiles": []
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "/node_modules",
+    "tmp",
+    "**/*/eslint.config.js",
+    "eslint.config.js"
+  ]
 }
