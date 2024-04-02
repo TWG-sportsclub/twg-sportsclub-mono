@@ -19,5 +19,5 @@
     "isolatedModules": true
   },
   "include": ["apps/*", "libs/*"],
-  "exclude": ["**/tsconfig.json", "/node_modules", "tmp", "**/eslint.config.js"]
+  "exclude": ["tsconfig.json", "node_modules", "tmp", "eslint.config.mjs"]
 }
