@@ -12,7 +12,6 @@
   "language": "en",
   "noConfigSearch": true,
   "words": [
-    "",
     "aashutoshrathi",
     "alloc",
     "ampproject",
@@ -290,7 +289,9 @@
     "joycon",
     "rollup",
     "sirv",
-    "sortby"
+    "sortby",
+    "rsbuild",
+    "tsutils"
   ],
   "version": "0.2"
 }

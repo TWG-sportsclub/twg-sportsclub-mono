@@ -25,3 +25,4 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: true
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
+JSON_ESLINT_PLUGIN_JSONC_FILE_NAME: eslint.config.mjs
