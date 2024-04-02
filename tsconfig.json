@@ -1,6 +1,4 @@
 {
-  "files": [],
-  "compilerOptions": {},
   "references": [
     {
       "path": "./apps/api"

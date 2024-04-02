@@ -1,12 +1,12 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "jsx": "preserve",
+    "composite": true,
     "plugins": [
       {
         "name": "next"

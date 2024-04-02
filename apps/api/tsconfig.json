@@ -12,9 +12,9 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "rootDir": "."
+    "rootDir": ".",
+    "composite": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"],
-  "references": []
+  "exclude": ["node_modules"]
 }
