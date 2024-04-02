@@ -3,6 +3,7 @@
 import eslint from "@eslint/js"
 import prettierConfig from "eslint-config-prettier"
 import jestPlugin from "eslint-plugin-jest"
+import eslintPluginJsonc from "eslint-plugin-jsonc"
 import tseslint from "typescript-eslint"
 
 export default tseslint.config(
@@ -11,6 +12,7 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
+  ...eslintPluginJsonc.configs["flat/recommended-with-jsonc"],
   prettierConfig,
   {
     plugins: {
@@ -33,5 +35,9 @@ export default tseslint.config(
   {
     files: ["**/test/**"],
     ...jestPlugin.configs["flat/recommended"],
+  },
+  {
+    files: ["**/*.json", "**/*.jsonc", "**/*.json5"],
+    ...eslintPluginJsonc.configs["flat/recommended-with-jsonc"],
   },
 )
