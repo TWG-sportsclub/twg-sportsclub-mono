@@ -5,7 +5,10 @@
     "version": "18.2.1"
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -60,20 +63,33 @@
           "codeCoverage": true
         }
       },
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ],
       "options": {
         "passWithNoTests": true
       }
     },
     "@nx/webpack:webpack": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/.next, build, dist"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/.next, build, dist"
+      ]
     },
     "e2e": {
       "cache": true
@@ -89,3 +105,4 @@
     }
   }
 }
+

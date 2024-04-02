@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "module": "esnext",
     "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -17,7 +16,8 @@
       "@/*": ["./src/*"]
     },
     "outDir": "../../dist/out-tsc",
-    "rootDir": "."
+    "rootDir": ".",
+    "module": "esnext"
   },
   "include": [
     "next-env.d.ts",
