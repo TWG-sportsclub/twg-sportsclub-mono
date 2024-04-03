@@ -16,9 +16,7 @@
       "@/*": ["./src/*"]
     },
     "outDir": "../../dist/out-tsc",
-    "rootDir": ".",
-    "noEmit": true,
-    "module": "esnext"
+    "rootDir": "."
   },
   "include": [
     "next-env.d.ts",

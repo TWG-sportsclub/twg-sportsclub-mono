@@ -7,8 +7,6 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",
-    "strictNullChecks": false,
-    "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
