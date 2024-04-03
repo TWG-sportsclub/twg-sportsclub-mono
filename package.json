@@ -13,8 +13,8 @@
     "format": "prettier \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-unknown --ignore-path .gitignore",
     "format:check": "pnpm format --check",
     "format:write": "pnpm format --write",
-    "lint": "pnpm exec nx run-many --target=lint",
-    "typecheck": "pnpm exec nx run-many --target=typecheck",
+    "lint": "pnpm exec nx run-many --target=lint --all=true",
+    "typecheck": "pnpm exec nx run-many --target=typecheck --all=true",
     "validate": "pnpm format:write && pnpm typecheck && pnpm lint"
   },
   "keywords": [],
@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^2.1.1",
+    "@nx/eslint": "18.2.1",
     "@nx/eslint-plugin": "18.2.1",
     "@nx/jest": "18.2.1",
     "@nx/js": "18.2.1",
