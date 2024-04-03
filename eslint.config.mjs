@@ -5,8 +5,6 @@ import nextPlugin from "@next/eslint-plugin-next"
 import prettierConfig from "eslint-config-prettier"
 import jestPlugin from "eslint-plugin-jest"
 import eslintPluginJsonc from "eslint-plugin-jsonc"
-import prettierPlugin from "eslint-plugin-prettier"
-import globals from "globals"
 import tseslint from "typescript-eslint"
 
 export default tseslint.config(
@@ -34,16 +32,7 @@ export default tseslint.config(
   },
   {
     files: ["**/*.{js,mjs,cjs}"],
-    languageOptions: {
-      globals: {
-        ...globals.es2021,
-      },
-    },
-    plugins: {
-      prettier: prettierPlugin,
-    },
     ...tseslint.configs.disableTypeChecked,
-    ...prettierConfig,
   },
   {
     files: ["**/test/**"],

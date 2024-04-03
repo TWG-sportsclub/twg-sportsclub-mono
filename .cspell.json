@@ -291,7 +291,27 @@
     "sirv",
     "sortby",
     "rsbuild",
-    "tsutils"
+    "tsutils",
+    "coveredstatements",
+    "coveredconditionals",
+    "coveredmethods",
+    "coveredelements",
+    "ncloc",
+    "antonioreid",
+    "keyline",
+    "cbranch",
+    "cstat",
+    "fstat",
+    "linenums",
+    "constexpr",
+    "isnt",
+    "wantarray",
+    "esac",
+    "bdsw",
+    "uage",
+    "blinenums",
+    "nosort",
+    "dont"
   ],
   "version": "0.2"
 }
