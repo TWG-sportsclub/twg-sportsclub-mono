@@ -75,7 +75,7 @@
     "build": "BUILD=true rspack build",
     "dev": "rspack serve",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx,js,jsx,mjs}\" --ignore-pattern \"../../.gitignore\" --fix",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --ignore-pattern \"../../.gitignore\" --fix",
     "start": "nest start",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
