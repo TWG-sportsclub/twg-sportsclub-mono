@@ -1,3 +1,3 @@
-module.exports = {
-  '*.{ts,tsx,js,json}': (files) => ['pnpm validate']
+export default {
+  "*.{ts,tsx,js,jsx,mjs,json}": (files) => ["pnpm validate"],
 }
