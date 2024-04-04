@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.settings.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "removeComments": true,
     "moduleResolution": "node",
@@ -11,7 +11,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "rootDir": ".",
-    "composite": true
+    "composite": true,
+    "strictNullChecks": true
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]

@@ -15,6 +15,7 @@ export default tseslint.config(
   prettierConfig,
 
   {
+    files: ['**/*.{ts,tsx}'],
     plugins: {
       '@typescript-eslint': tseslint.plugin,
       jest: jestPlugin
