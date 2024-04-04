@@ -14,13 +14,7 @@
     "composite": true,
     "strictNullChecks": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.mjs",
-    "**/*.json"
-  ],
+  // include only the files that are needed for the linting
+  "include": ["**/*.{ts,tsx,js,jsx,mjs,json}"],
   "exclude": ["node_modules", "dist"]
 }

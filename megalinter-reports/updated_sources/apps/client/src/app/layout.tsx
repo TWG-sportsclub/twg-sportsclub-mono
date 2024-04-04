@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'Make every game exciting.'
 }
 
-export default function RootLayout({
+export default function RootLayout ({
   children
 }: Readonly<{
   children: React.ReactNode
 }>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>{children}</body>
     </html>
   )
