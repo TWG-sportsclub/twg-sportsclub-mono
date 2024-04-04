@@ -311,7 +311,12 @@
     "uage",
     "blinenums",
     "nosort",
-    "dont"
+    "dont",
+    "CODETOTAL",
+    "uvicorn",
+    "SYFT",
+    "DUSTILOCK",
+    "TRUFFLEHOG"
   ],
   "version": "0.2"
 }
