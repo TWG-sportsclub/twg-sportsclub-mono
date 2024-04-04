@@ -17,5 +17,13 @@
     "experimentalDecorators": true,
     "isolatedModules": true
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.json"
+  ],
   "exclude": ["tsconfig.json", "node_modules", "tmp"]
 }
