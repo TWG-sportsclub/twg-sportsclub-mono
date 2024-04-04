@@ -18,4 +18,4 @@ rules:
     # Used to follow prettier standard:
     # https://github.com/prettier/prettier/pull/10926
 ignore:
-  - "pnpm-lock.yaml"
+  - 'pnpm-lock.yaml'

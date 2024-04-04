@@ -28,7 +28,7 @@
   "scripts": {
     "build": "nx build",
     "dev": "nx dev -p 3001",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx,js,jsx,mjs,json}\" --cache --cache-strategy content --ignore-pattern \"../../.gitignore\" --fix",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx,js,jsx,mjs,json}\"  --config=../../eslint.config.mjs --ignore-pattern \"../../.gitignore\" --fix",
     "start": "nx start",
     "typecheck": "nx exec -- tsc --noEmit -p tsconfig.json"
   },
