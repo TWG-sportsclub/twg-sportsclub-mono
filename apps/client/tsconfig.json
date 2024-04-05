@@ -4,6 +4,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "moduleResolution": "bundler",
+    "module": "ESNext",
     "resolveJsonModule": true,
     "jsx": "preserve",
     "composite": true,

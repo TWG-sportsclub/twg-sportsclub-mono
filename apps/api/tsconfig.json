@@ -4,6 +4,7 @@
     "removeComments": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "../../dist/out-tsc",
     "baseUrl": "./",

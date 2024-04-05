@@ -12,12 +12,5 @@
       "path": "./apps/client"
     }
   ],
-  "include": [
-    "apps/",
-    "libs/",
-    "**/*.ts",
-    "apps/api/src/app.controller.ts",
-    "apps/api/tsconfig.json"
-  ],
-  "exclude": ["node_modules", "dist"]
+  "include": ["**/*.ts"]
 }

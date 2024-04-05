@@ -9,12 +9,12 @@
     "lib": ["ES2022", "dom"],
     "module": "ESNext",
     "pretty": true,
-    "resolveJsonModule": true,
     "rootDir": ".",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "ES2022",
+    "declaration": true,
     "declarationMap": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -25,8 +25,6 @@
     "experimentalDecorators": true
   },
   "include": [
-    "apps",
-    "libs",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
