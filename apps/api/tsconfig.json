@@ -19,7 +19,8 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.mjs",
-    "**/*.json"
+    "**/*.json",
+    "src/app.controller.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

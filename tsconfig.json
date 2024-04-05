@@ -1,5 +1,9 @@
 {
   "extends": "./tsconfig.settings.json",
+  "files": [],
+  "compilerOptions": {
+    "disableSourceOfProjectReferenceRedirect": true
+  },
   "references": [
     {
       "path": "./apps/api"
@@ -7,5 +11,13 @@
     {
       "path": "./apps/client"
     }
-  ]
+  ],
+  "include": [
+    "apps/",
+    "libs/",
+    "**/*.ts",
+    "apps/api/src/app.controller.ts",
+    "apps/api/tsconfig.json"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
