@@ -15,15 +15,19 @@
     "strict": true,
     "strictNullChecks": true,
     "experimentalDecorators": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
+    "apps",
+    "libs",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
     "**/*.mjs",
-    "**/*.json"
+    "**/*.json",
+    "eslint.config.mjs"
   ],
-  "exclude": ["tsconfig.json", "node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "megalinter-reports"]
 }

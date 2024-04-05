@@ -13,20 +13,19 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   prettierConfig,
-
-  {
-    files: ['**/*.{ts,tsx}'],
-    plugins: {
-      '@typescript-eslint': tseslint.plugin,
-      jest: jestPlugin
-    }
-  },
   {
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
         project: true
       }
+    }
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      jest: jestPlugin
     }
   },
   {
