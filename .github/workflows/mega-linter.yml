@@ -52,8 +52,28 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@2ab6dce4f53589dada480b94c53cb05a06b04673
         with:
-          version: 8.15.4
+          version: 8
+      - name: Restore cached pnpm dependencies
+        id: cache-dependencies-restore
+        uses: actions/cache/restore@3185ecfd6135856ca6d904ae032cff4f39b8b365
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: pnpm-dependencies=${{ hashFiles('pnpm-lock.yaml') }}
       - run: pnpm install --no-frozen-lockfile
+      - name: Cache pnpm dependencies
+        id: cache-dependencies-save
+        uses: actions/cache/save@3185ecfd6135856ca6d904ae032cff4f39b8b365
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
+      - uses: nrwl/nx-set-sha@v4.0.4
+      - run: git branch --track main origin/main
+      - run: pnpm nx affected -t lint test build --parallel=3
+      - run: pnpm nx affected -t e2e --parallel=1
 
       - name: MegaLinter
         id: ml
