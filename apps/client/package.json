@@ -21,7 +21,8 @@
   "nx": {
     "includedScripts": [
       "typecheck",
-      "lint"
+      "lint",
+      "dev"
     ]
   },
   "private": true,
