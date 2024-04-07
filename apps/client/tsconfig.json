@@ -18,8 +18,7 @@
       "@/*": ["./src/*"]
     },
     "outDir": "../../dist/out-tsc",
-    "rootDir": ".",
-    "noEmit": true
+    "rootDir": "."
   },
   "include": [
     "next-env.d.ts",
