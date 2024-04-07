@@ -20,6 +20,11 @@
   "keywords": [],
   "author": "Antonio Reid",
   "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji-conventional"
+    }
+  },
   "dependencies": {
     "@nestjs/common": "^10.3.7",
     "@nestjs/core": "^10.3.7",
@@ -86,9 +91,9 @@
     "babel-jest": "^29.4.1",
     "commitizen": "^4.3.0",
     "cypress": "^13.6.6",
+    "cz-emoji-conventional": "^1.0.2",
     "esbuild": "^0.20.2",
     "eslint": "9.0.0",
-    "eslint-config-love": "^44.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-cypress": "^2.13.4",
     "husky": "^9.0.11",
@@ -106,4 +111,3 @@
     "url-loader": "^4.1.1"
   }
 }
-
