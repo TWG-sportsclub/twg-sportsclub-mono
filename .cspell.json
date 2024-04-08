@@ -316,7 +316,11 @@
     "uvicorn",
     "SYFT",
     "DUSTILOCK",
-    "TRUFFLEHOG"
+    "TRUFFLEHOG",
+    "pgadmin",
+    "dpage",
+    "pmmmwh",
+    "Codeium"
   ],
   "version": "0.2"
 }
