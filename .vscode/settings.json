@@ -18,5 +18,7 @@
     "editorCursor.background": "#7b29ff",
     "editorCursor.foreground": "#feffe9",
     "editorLineNumber.activeForeground": "#6aff68"
-  }
+  },
+  "WillLuke.nextjs.addTypesOnSave": true,
+  "WillLuke.nextjs.hasPrompted": true
 }
