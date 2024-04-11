@@ -32,6 +32,7 @@
     "@nestjs/platform-express": "^10.3.7",
     "@nx/workspace": "18.2.3",
     "buffer-from": "^1.1.2",
+    "class-transformer": "^0.5.1",
     "eslint-plugin-jest": "^28.2.0",
     "eslint-plugin-jsonc": "^2.15.0",
     "globals": "^15.0.0",
@@ -111,4 +112,3 @@
     "url-loader": "^4.1.1"
   }
 }
-

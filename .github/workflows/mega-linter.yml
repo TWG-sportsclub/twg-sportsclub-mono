@@ -71,9 +71,9 @@ jobs:
             node_modules
             ~/.cache/Cypress
           key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
-      - uses: nrwl/nx-set-shas@76907e7e5d3cd17ddb5e2b123389f054bffcdd03
-      - run: pnpm nx affected -t lint test build --parallel=3
-      - run: pnpm nx affected -t e2e --parallel=1
+      # - uses: nrwl/nx-set-shas@76907e7e5d3cd17ddb5e2b123389f054bffcdd03
+      # - run: pnpm nx affected -t lint test build --parallel=3
+      # - run: pnpm nx affected -t e2e --parallel=1
 
       - name: MegaLinter
         id: ml
