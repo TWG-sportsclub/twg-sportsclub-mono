@@ -77,6 +77,7 @@ const config = {
         'cache-manager',
         'class-validator',
         'class-transformer',
+        'class-transformer/storage',
         '@nestjs/microservices/microservices-module',
         'socket.io-adapter',
         'utf-8-validate',
@@ -108,12 +109,7 @@ const config = {
       }
       callback()
     }
-  ],
-  watch: true,
-  watchOptions: {
-    ignored: /node_modules/,
-    poll: true
-  }
+  ]
 }
 
 module.exports = config

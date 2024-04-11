@@ -79,7 +79,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "BUILD=true rspack build",
+    "build": "rspack build",
     "dev": "rspack serve",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx,js,jsx,mjs}\"  --config=../../eslint.config.mjs --ignore-pattern \"../../.gitignore\" --fix",
